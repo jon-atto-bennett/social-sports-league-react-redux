@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-class HomePage extends Component {
+class TablePage extends Component {
   render () {
     return (
       <div>
-        <h2>Home Page</h2>
+        <h2>Table Page</h2>
       </div>
     )
   }
 }
 
-export default HomePage
+export default TablePage

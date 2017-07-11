@@ -8,11 +8,15 @@ import FixturesPage from './components/FixturesPage'
 import ResultsPage from './components/ResultsPage'
 import TablePage from './components/TablePage'
 
+// Webpack can import CSS files too!
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import './styles/styles.css'
+
 // const store = configureStore()
 
 render(
   <BrowserRouter>
-    <div>
+    <div className='container text-center'>
       <Header />
       <main>
         <Route exact path='/' component={HomePage} />

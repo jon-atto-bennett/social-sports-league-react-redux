@@ -1,13 +1,30 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { fetchTeams } from '../actions'
 
 class HomePage extends Component {
+
+  teamRow (team, index) {
+    return <div key={index}>{team.name}</div>
+  }
+
   render () {
     return (
       <div>
-        <h2>Home Page</h2>
+        <h2>TEAMS</h2>
+        {this.props.teams.map(this.teamRow)}
       </div>
     )
   }
 }
 
-export default HomePage
+HomePage.propTypes = {
+  teams: PropTypes.array.isRequired
+}
+
+function mapStateToProps (state, ownProps) {
+  return { teams: state.teams }
+}
+
+export default connect(mapStateToProps, { fetchTeams })(HomePage)

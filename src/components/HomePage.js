@@ -6,13 +6,13 @@ import { fetchTeams } from '../actions'
 class HomePage extends Component {
 
   teamRow (team, index) {
-    return <div key={index}>{team.name}</div>
+    return <div className='teamlist' key={index}>{team.name}</div>
   }
 
   render () {
     return (
       <div>
-        <h2>TEAMS</h2>
+        <h2 className='sub-heading'>TEAMS</h2>
         {this.props.teams.map(this.teamRow)}
       </div>
     )

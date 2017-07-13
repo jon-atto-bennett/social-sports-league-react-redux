@@ -1,7 +1,8 @@
-/** {
+* {
   border: 1px solid blue;
+  font-family: 'Rubik', sans-serif;
 
-}*/
+}
 
 .header {
 
@@ -16,9 +17,12 @@
   background: #fafafa;
   margin: 0px 0px;
   padding-bottom: 3px;
-
-  font-family: 'Rubik', sans-serif;
   font-size: 70px;
+  font-weight: bold;
+}
+
+.sub-heading {
+  font-size: 40px;
   font-weight: bold;
 }
 
@@ -27,6 +31,10 @@ a {
   font-family: 'Rubik', sans-serif;
   font-size: 20px;
   padding-right: 40px;
+}
+
+.teamlist {
+  font-size: 30px;
 }
 
 /* #app {

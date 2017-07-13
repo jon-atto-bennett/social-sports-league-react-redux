@@ -9,7 +9,8 @@
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.test.js\"",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+      "knex": "knex"
   },
   "author": "Jon Bennett",
   "license": "MIT",
@@ -17,6 +18,7 @@
     "babel-polyfill": "6.8.0",
     "bootstrap": "3.3.6",
     "jquery": "2.2.3",
+    "knex": "^0.13.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -64,6 +66,7 @@
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "1.13.0",
+    "sqlite3": "^3.1.8",
     "webpack-dev-middleware": "1.6.1",
     "webpack-hot-middleware": "2.10.0"
   },

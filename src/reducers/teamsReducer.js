@@ -1,6 +1,6 @@
 import { FETCH_TEAMS } from '../actions'
 
-const teams = [{name: 'Hotshots'}, {name: 'Grassroots'}, {name: 'keepy Up'}, {name: 'Passed It'}, {name: 'Last One'}]
+const teams = [{name: 'Hotshots'}, {name: 'Grassroots'}, {name: 'Keepy Up'}, {name: 'Passed It'}, {name: 'Last One'}]
 
 export default function teamsReducer (state = teams, action) {
   switch (action.type) {

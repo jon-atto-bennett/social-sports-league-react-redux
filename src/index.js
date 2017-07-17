@@ -1,11 +1,10 @@
 import React from 'react'
-// import ReactDOM from 'react-dom'
 import { render } from 'react-dom'
 import {Provider} from 'react-redux'
-import { createStore } from 'redux'
+import configureStore from './store/configureStore'
 import { BrowserRouter, Route } from 'react-router-dom'
+import {loadTeams} from './actions/index'
 
-import reducers from './reducers'
 import Header from './components/Header'
 import HomePage from './components/HomePage'
 import FixturesPage from './components/FixturesPage'
@@ -16,7 +15,8 @@ import TablePage from './components/TablePage'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './styles/styles.css'
 
-const store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const store = configureStore()
+store.dispatch(loadTeams())
 
 render(
   <Provider store={store}>

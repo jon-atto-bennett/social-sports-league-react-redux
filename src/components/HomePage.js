@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import {bindActionCreators} from 'redux'
 import { fetchTeams } from '../actions'
 
 class HomePage extends Component {
@@ -20,11 +21,18 @@ class HomePage extends Component {
 }
 
 HomePage.propTypes = {
-  teams: PropTypes.array.isRequired
+  teams: PropTypes.array.isRequired,
+  actions: PropTypes.object.isRequired
 }
 
 function mapStateToProps (state, ownProps) {
   return { teams: state.teams }
 }
 
-export default connect(mapStateToProps, { fetchTeams })(HomePage)
+function mapDispatchToProps (dispatch) {
+  return {
+    actions: bindActionCreators({ fetchTeams }, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage)

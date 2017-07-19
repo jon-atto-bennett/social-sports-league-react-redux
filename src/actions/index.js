@@ -1,20 +1,13 @@
-import teamAPI from '../api/teamAPI'
+import axios from 'axios'
 
-export const FETCH_TEAMS_SUCCESS = 'FETCH_TEAMS_SUCCESS'
-
-export function fetchTeamsSuccess (teams) {
-  return {
-    type: FETCH_TEAMS_SUCCESS,
-    teams
-  }
-}
-
-export function loadTeams () {
-  return function (dispatch) {
-    return teamAPI.getAllTeams().then(teams => {
-      dispatch(fetchTeamsSuccess(teams))
-    }).catch(error => {
-      throw (console.error())
+export const fetchTeams = () => {
+  const request = axios.get('/teams')
+  return (dispatch) => {
+    request.then(({data}) => {
+      dispatch({
+        type: 'FETCH_TEAMS',
+        teams: data
+      })
     })
   }
 }

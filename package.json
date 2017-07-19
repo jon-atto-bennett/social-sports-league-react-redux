@@ -10,11 +10,12 @@
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress tools/testSetup.js \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch",
-      "knex": "knex"
+    "knex": "knex"
   },
   "author": "Jon Bennett",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.16.2",
     "babel-polyfill": "6.8.0",
     "bootstrap": "3.3.6",
     "jquery": "2.2.3",
@@ -27,7 +28,9 @@
     "react-router-dom": "^4.1.1",
     "react-router-redux": "4.0.4",
     "redux": "3.5.2",
+    "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "2.0.1",
+    "superagent": "^3.5.2",
     "toastr": "2.1.2"
   },
   "devDependencies": {

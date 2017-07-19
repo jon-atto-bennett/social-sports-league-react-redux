@@ -3,7 +3,6 @@ import { render } from 'react-dom'
 import {Provider} from 'react-redux'
 import configureStore from './store/configureStore'
 import { BrowserRouter, Route } from 'react-router-dom'
-import {loadTeams} from './actions/index'
 
 import Header from './components/Header'
 import HomePage from './components/HomePage'
@@ -16,7 +15,6 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './styles/styles.css'
 
 const store = configureStore()
-store.dispatch(loadTeams())
 
 render(
   <Provider store={store}>

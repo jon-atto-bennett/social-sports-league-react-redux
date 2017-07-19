@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import {bindActionCreators} from 'redux'
+import * as ActionCreators from '../actions/index'
 import { fetchTeams } from '../actions'
 
 class HomePage extends Component {
+
+  componentDidMount () {
+    this.props.fetchTeams()
+  }
 
   teamRow (team, index) {
     return <div className='teamlist' key={index}>{team.name}</div>
@@ -20,19 +25,8 @@ class HomePage extends Component {
   }
 }
 
-HomePage.propTypes = {
-  teams: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
-}
-
-function mapStateToProps (state, ownProps) {
+function mapStateToProps (state) {
   return { teams: state.teams }
 }
 
-function mapDispatchToProps (dispatch) {
-  return {
-    actions: bindActionCreators({ fetchTeams }, dispatch)
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage)
+export default connect(mapStateToProps, { fetchTeams })(HomePage)

@@ -6,11 +6,11 @@ import { BrowserRouter, Route } from 'react-router-dom'
 
 import {fetchTeams} from './actions/'
 
-import Header from './components/Header'
-import HomePage from './components/HomePage'
-import FixturesPage from './components/FixturesPage'
-import ResultsPage from './components/ResultsPage'
-import TablePage from './components/TablePage'
+import Header from './components/common/Header'
+import HomePage from './components/home/HomePage'
+import FixturesPage from './components/fixtures/FixturesPage'
+import ResultsPage from './components/results/ResultsPage'
+import TablePage from './components/table/TablePage'
 
 // Webpack can import CSS files too!
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'

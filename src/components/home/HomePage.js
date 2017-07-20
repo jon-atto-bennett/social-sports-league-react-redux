@@ -3,19 +3,16 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import {bindActionCreators} from 'redux'
 import * as actionCreators from '../../actions/index'
-// import { fetchTeams } from '../actions'
+import TeamList from './TeamList'
 
 class HomePage extends Component {
 
-  teamRow (team, index) {
-    return <div className='teamlist' key={index}>{team.name}</div>
-  }
-
   render () {
+    const {teams} = this.props
     return (
       <div>
         <h2 className='sub-heading'>TEAMS</h2>
-        {this.props.teams.map(this.teamRow)}
+        <TeamList teams={teams} />
       </div>
     )
   }

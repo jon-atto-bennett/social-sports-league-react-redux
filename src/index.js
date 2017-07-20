@@ -4,6 +4,8 @@ import {Provider} from 'react-redux'
 import configureStore from './store/configureStore'
 import { BrowserRouter, Route } from 'react-router-dom'
 
+import {fetchTeams} from './actions/'
+
 import Header from './components/Header'
 import HomePage from './components/HomePage'
 import FixturesPage from './components/FixturesPage'
@@ -15,6 +17,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './styles/styles.css'
 
 const store = configureStore()
+store.dispatch(fetchTeams())
 
 render(
   <Provider store={store}>
